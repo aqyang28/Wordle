@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            LandingView()
+        TabView {
+            Tab("Games", systemImage: "house") {
+                NavigationStack {
+                    LandingView()
+                }
+            }
+            Tab("Stats", systemImage: "chart.bar.fill") {
+                StatsView()
+            }
+            Tab("Leaderboard", systemImage: "medal.fill") {
+                LeaderboardView()
+            }
         }
     }
 }
